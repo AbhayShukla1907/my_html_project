@@ -21,7 +21,7 @@ A GitHub account and a repository for your project.
    mkdir my-html-project
    cd my-html-project
 2. Add an index.html file
-   ```<!DOCTYPE html>
+   <!DOCTYPE html>
 <html>
 <head>
     <title>CI-CD Test</title>

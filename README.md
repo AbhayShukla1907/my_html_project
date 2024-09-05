@@ -18,45 +18,52 @@ A GitHub account and a repository for your project.
 
 ### 1. HTML Project Setup
 1. Clone or create a my_html_project:
-   mkdir my-html-project
+```
+ mkdir my-html-project
    cd my-html-project
+```
 2. Add an index.html file
+   ```
    <!DOCTYPE html>
-<html>
-<head>
+   <html>
+   <head>
     <title>CI-CD Test</title>
-</head>
-<body>
+   </head>
+   <body>
     <h1>Welcome to the CI-CD Test Page</h1>
-</body>
-</html>```
+   </body>
+   </html>```
 
 3. Initialize Git and push the project to GitHub
+   ```
    git init
-git add .
-git commit -m "Initial commit"
-git remote add origin https://github.com/AbhayShukla1907/my-html-project.git
-git push -u origin master
+   git add .
+   git commit -m "Initial commit"
+   git remote add origin https://github.com/AbhayShukla1907/my-html-project.git
+   git push -u origin master
 
-### 2. Nginx and Server Setup
+ ### 2. Nginx and Server Setup
 1. set up a local Linux machine
 2. Install Nginx
-sudo apt update
-sudo apt install nginx
-sudo systemctl enable nginx
-sudo systemctl start nginx
+   ```
+   sudo apt update
+   sudo apt install nginx
+   sudo systemctl enable nginx
+   sudo systemctl start nginx
 
 ### 3. Write a Python Script to Check for New Commits
 1. Install Required Python Packages:
 Install Python if not already installed
-        sudo apt install python3 python3-pip -y
-   Install the requests library for making HTTP requests
-        pip3 install requests
-2. Create the Python Script:
+    ```
+    sudo apt install python3 python3-pip -y
+Install the requests library for making HTTP requests
+     "pip3 install requests"
+3. Create the Python Script:
  Create a file named check_commits.py
-        nano check_commits.py
+      "nano check_commits.py"
  Add the following code to the file
-       import requests
+   ```
+    import requests
 
 "REPO_OWNER = 'AbhayShukla1907'
 REPO_NAME = 'my_html_project'
@@ -87,14 +94,16 @@ if __name__ == '__main__':
 
 3. Create a File to Store the Latest Commit:
         echo "" > latest_commit.txt
+```
 
 
 ### 4. Write a Bash Script to Deploy the Code
 1. Create the Bash Script:
     Create a file named deploy.sh
-        nano deploy.sh
+        "nano deploy.sh"
      Add the following code to the file
-    "  #!/bin/bash
+```
+   #!/bin/bash
 # Navigate to the web root directory (adjust this path as needed)
 cd /var/www/html
 
@@ -105,33 +114,35 @@ git pull origin main
 sudo systemctl restart nginx
 
 echo "Deployment completed!"
-"
+```
 2. Make the Script Executable:
-   chmod +x deploy.sh
+   "chmod +x deploy.sh"
 
 
 ### 5. Set Up a Cron Job to Run the Python Script
 1. Edit the Crontab
 Open the crontab edito
-  crontab -e
+  "crontab -e"
 Add the following line to run the Python script every minute
-  * * * * * /usr/bin/python3 /path/to/check_commits.py && /path/to/deploy.sh
+  "* * * * * /usr/bin/python3 /path/to/check_commits.py && /path/to/deploy.sh"
 
 
 ### 6. Test the Setup
 1. Make a New Commit:
    Make a change to your index.html file, for example:
-      echo "<p>Updated content/!</p>" >> index.html
+      "echo "<p>Updated content/!</p>" >> index.html"
    Add and commit the change
+      ```
       git add index.html
-git commit -m "Updated content"
-git push origin main
+      git commit -m "Updated content"
+      git push origin main
 
 2. Verify Deployment
    Wait for a minute, then visit your server's public IP in a browser.
    You should see the updated content on your webpage.
 
-
+## Conclusion
+This CI-CD pipeline continuously checks for updates in a GitHub repository and automatically deploys them to an Nginx server, ensuring efficient delivery of updates.
 
 
 

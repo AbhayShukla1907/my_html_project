@@ -13,6 +13,7 @@ Nginx for serving the HTML project.
 Python 3 with requests library.
 Git for version control.
 A GitHub account and a repository for your project.
+
 ## Setup Instructions
 
 ### 1. HTML Project Setup
@@ -20,7 +21,7 @@ A GitHub account and a repository for your project.
    mkdir my-html-project
    cd my-html-project
 2. Add an index.html file
-    "<!DOCTYPE html>
+   <!DOCTYPE html>
 <html>
 <head>
     <title>CI-CD Test</title>
@@ -28,7 +29,7 @@ A GitHub account and a repository for your project.
 <body>
     <h1>Welcome to the CI-CD Test Page</h1>
 </body>
-</html>"
+</html>
 
 3. Initialize Git and push the project to GitHub
    git init

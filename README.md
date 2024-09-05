@@ -29,7 +29,7 @@ A GitHub account and a repository for your project.
 <body>
     <h1>Welcome to the CI-CD Test Page</h1>
 </body>
-</html>
+</html>```
 
 3. Initialize Git and push the project to GitHub
    git init
